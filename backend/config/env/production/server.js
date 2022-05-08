@@ -1,7 +1,7 @@
 module.exports = ({ env }) => ({
   proxy: true,
   url: env("https://artbyhargreaves.herokuapp.com"),
-  /*   app: {
+  app: {
     keys: env.array("APP_KEYS"),
-  }, */
+  },
 });
