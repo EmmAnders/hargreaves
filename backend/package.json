@@ -14,10 +14,9 @@
     "@strapi/plugin-i18n": "4.1.9",
     "@strapi/plugin-users-permissions": "4.1.9",
     "@strapi/strapi": "4.1.9",
-    "better-sqlite3": "7.4.6",
-    "mongoose": "^6.3.2",
-    "strapi-connector-mongoose": "^3.6.9"
+    "better-sqlite3": "7.4.6"
   },
+  
   "author": {
     "name": "A Strapi developer"
   },
