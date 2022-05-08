@@ -43,8 +43,7 @@ export default {
 
   publicRuntimeConfig: {
     axios: {
-      baseURL:
-        /* process.env.PRODUCTION_API_URL || */ "http://localhost:1337/api",
+      baseURL: process.env.BACKEND_URL || "http://localhost:1337/api",
     },
   },
 
