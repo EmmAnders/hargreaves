@@ -1,0 +1,164 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.4s;
+}
+.page-enter,
+.page-leave-active {
+  opacity: 0;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: 100%;
+}
+
+body {
+  font-family: neue-haas-grotesk-display, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(16px, 2vw, 24px);
+  line-height: 1.25;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: geometricPrecision;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  color: var(--themeColor);
+  box-sizing: border-box;
+  background: var(--themeBackground);
+  min-width: 100vw;
+  overflow-x: hidden;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+p,
+a {
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: $font-weight;
+  font-style: $font-style;
+  text-transform: $text-transform;
+}
+
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  font-style: normal;
+}
+
+button {
+  font-family: inherit;
+  font-size: 100%;
+  outline: none;
+  border: none;
+  overflow: visible;
+  text-transform: none;
+  width: 100%;
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+}
+
+@layer utilities {
+  @variants responsive {
+    .heading-3xl {
+      font-size: clamp(4rem, 2.75vw, 14rem);
+      line-height: 1.2;
+    }
+
+    .heading-xxl {
+      font-size: clamp(4rem, 2.75vw, 10rem);
+      line-height: 1.2;
+    }
+
+    .heading-xl {
+      font-size: clamp(1.5rem, 2.75vw, 2.5rem);
+      line-height: 1.2;
+    }
+
+    .text-big {
+      font-size: clamp(16px, 2vw, 32px);
+    }
+
+    .text-small {
+      font-size: clamp(12px, 1vw, 16px);
+    }
+
+    .pill {
+      padding: 0 1em;
+      height: clamp(1.4rem, 2.2vw, 2rem);
+      cursor: pointer;
+      border-radius: 9999rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.2s ease;
+    }
+  }
+}
+
+.page-container {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 97%;
+
+  /*   @screen xl {
+    max-width: 95%;
+  }
+  @screen 3xl {
+    max-width: 85%;
+  }
+  @screen 4xl {
+    max-width: 72%;
+  }
+  @screen 5xl {
+    max-width: 63%;
+  } */
+}
+
+.block-container {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 95%;
+}
+
+:root {
+  --themeBackground: #fdfbf7; // Default background color
+  --themeColor: #000000; // Default text color
+  --themeAccentColor: #10ff0b; // Default text color
+  --themeHover: black; // Default text color
+  --themeGrey: #ccc; // Default text color
+}
