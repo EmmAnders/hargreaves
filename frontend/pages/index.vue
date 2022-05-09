@@ -1,5 +1,5 @@
 <template>
-  <div>{{ about }}</div>
+  <div v-if="about">{{ about }}</div>
 </template>
 
 <script>
