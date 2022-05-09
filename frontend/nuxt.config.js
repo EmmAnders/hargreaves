@@ -21,13 +21,20 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  /*   css: ["@/assets/scss/main.scss"], */
+  css: ["@/assets/scss/main.scss"],
 
   // Pugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
+
+  components: [
+    "~/components",
+    { path: "~/components/navigation" },
+    { path: "~/components/icons" },
+    { path: "~/components/animations" },
+  ],
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
@@ -43,11 +50,7 @@ export default {
 
   publicRuntimeConfig: {
     axios: {
-      baseURL: process.env.BACKEND_URL || "http://localhost:1337/api",
+      baseURL: /* process.env.BACKEND_URL ||  */ "http://localhost:1337/api",
     },
-  },
-
-  strapi: {
-    url: "<http://localhost:1337>",
   },
 };
