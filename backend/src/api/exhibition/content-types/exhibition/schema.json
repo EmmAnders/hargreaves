@@ -4,7 +4,8 @@
   "info": {
     "singularName": "exhibition",
     "pluralName": "exhibitions",
-    "displayName": "exhibition"
+    "displayName": "exhibition",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,6 +13,15 @@
   "pluginOptions": {},
   "attributes": {
     "name": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "date": {
+      "type": "datetime"
+    },
+    "url": {
       "type": "string"
     }
   }

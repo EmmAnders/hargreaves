@@ -4,7 +4,8 @@
   "info": {
     "singularName": "about",
     "pluralName": "abouts",
-    "displayName": "about"
+    "displayName": "about",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -13,6 +14,19 @@
   "attributes": {
     "bio": {
       "type": "text"
+    },
+    "instagram": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "images": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
     }
   }
 }
