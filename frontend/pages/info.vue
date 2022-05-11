@@ -116,7 +116,7 @@ export default {
   },
   computed: {
     images() {
-      if (this.about.images.length) {
+      if (this.about.images) {
         return this.about.images.data.map((item) => {
           return item.attributes.formats.medium.url;
         });
