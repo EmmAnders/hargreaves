@@ -1,6 +1,6 @@
 export const state = () => ({
-  apiUrl: process.env.BACKEND_URL,
   imageUrl: process.env.IMAGE_URL,
+  apiUrl: process.env.BASE_URL,
   artPieces: [],
   about: [],
   wishlist: [],
@@ -81,7 +81,7 @@ export const actions = {
 
   async getAllPieces({ commit, state }) {
     try {
-      const res = await this.$axios.$get(`${state.apiUrl}/images?populate=*`);
+      const res = await this.$axios.$get(`/images?populate=*`);
       commit("SET_ART_PIECES", res.data);
     } catch (error) {
       console.log("errore", error);
@@ -90,7 +90,7 @@ export const actions = {
 
   async getAboutInfo({ commit, state }) {
     try {
-      const res = await this.$axios.$get(`${state.apiUrl}/about?populate=*`);
+      const res = await this.$axios.$get(`/about?populate=*`);
       commit("SET_ABOUT_PAGE", res.data);
     } catch (error) {
       console.log("error", error);
@@ -123,7 +123,7 @@ export const actions = {
 
     localStorageItems.map((item) => {
       const result = this.$axios.$get(
-        `${state.apiUrl}/images?filters[slug][$eq]=${item.attributes.slug}&populate=*`
+        `/images?filters[slug][$eq]=${item.attributes.slug}&populate=*`
       );
       promises.push(result);
     });

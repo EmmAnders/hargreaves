@@ -50,7 +50,13 @@ export default {
     transpile: ["gsap"],
   },
 
+  axios: {
+    baseURL: "https://artbyhargreaves.herokuapp.com/api", // Used as fallback if no runtime config is provided
+  },
+
   publicRuntimeConfig: {
-    baseURL: process.env.BACKEND_URL,
+    axios: {
+      browserBaseURL: process.env.BASE_URL,
+    },
   },
 };

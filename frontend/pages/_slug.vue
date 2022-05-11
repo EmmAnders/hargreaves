@@ -76,7 +76,7 @@ export default {
   async asyncData({ params, $axios }) {
     try {
       const { data } = await $axios.$get(
-        `images?filters[slug][$eq]=${params.slug}&populate=*`
+        `/images?filters[slug][$eq]=${params.slug}&populate=*`
       );
       return { artPiece: data[0] };
     } catch (error) {
