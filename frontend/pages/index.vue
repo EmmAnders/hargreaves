@@ -31,12 +31,12 @@
 <script>
 import { mapState, mapGetters, mapMutations, mapActions } from "vuex";
 
-/* import { gsap } from "gsap";
+import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";
- */
-/* if (process.client) {
+
+if (process.client) {
   gsap.registerPlugin(ScrollTrigger);
-} */
+}
 
 export default {
   data() {
@@ -49,7 +49,7 @@ export default {
     ...mapGetters(["selectedFilterLength"]),
 
     coverImageUrl() {
-      return this.$store.state.url;
+      return this.$store.state.imageUrl;
     },
 
     filteredPieces() {
@@ -68,7 +68,7 @@ export default {
   watch: {
     async filteredPieces() {
       await new Promise((resolve) => setTimeout(resolve, 200));
-      /*    this.staggerAnimation(); */
+      this.staggerAnimation();
     },
   },
   methods: {
@@ -80,12 +80,13 @@ export default {
     staggerAnimation() {
       const { galleryItem } = this.$refs;
 
-      /*    let items = document.querySelectorAll(".gallery-item");
+      let items = document.querySelectorAll(".gallery-item");
       gsap.set(items, {
         autoAlpha: 0,
         y: 150,
-      }); */
-      /*   ScrollTrigger.batch(items, {
+      });
+
+      ScrollTrigger.batch(items, {
         onEnter: (batch) =>
           batch.forEach((item, index) =>
             gsap.to(item, {
@@ -95,8 +96,9 @@ export default {
               overwrite: "auto",
               delay: 0.25,
             })
-          ), */
-      /*       onLeaveBack: (batch) =>
+          ),
+
+        onLeaveBack: (batch) =>
           batch.forEach((item, index) =>
             gsap.to(item, {
               opacity: 0,
@@ -104,7 +106,7 @@ export default {
               overwrite: "auto",
             })
           ),
-      }); */
+      });
     },
   },
   created() {
@@ -112,7 +114,7 @@ export default {
   },
   async mounted() {
     await this.$nextTick();
-    /*   const reveal = document.querySelectorAll(".reveal");
+    const reveal = document.querySelectorAll(".reveal");
     gsap.from(reveal, 0.8, {
       delay: 0.8,
       ease: "power3.out",
@@ -121,9 +123,9 @@ export default {
       stagger: {
         amount: 0.5,
       },
-    }); */
+    });
     await new Promise((resolve) => setTimeout(resolve, 400));
-    /*     this.staggerAnimation(); */
+    this.staggerAnimation();
   },
 };
 </script>

@@ -31,7 +31,7 @@
           @click="removeWishlistItem(item)"
           class="mr-3 cursor-pointer col-start-13 col-end-13 w-10 h-10 flex items-center justify-center rounded-full text-center bg-theme-background text-theme-color"
         >
-          <CloseIcon />
+          <span class="text-theme-color">x</span>
         </div>
       </div>
     </div>

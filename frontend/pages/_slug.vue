@@ -1,6 +1,5 @@
 <template>
   <article class="pdp-page page-container py-16 grid grid-cols-12">
-    <!-- Title -->
     <div class="reveal col-span-12 md:flex md:pb-0">
       <h1 class="heading-3xl pr-2">
         {{ artPiece.attributes.name }}
@@ -8,10 +7,13 @@
 
       <div
         @click="handleWishlistItem(artPiece)"
-        class="pill w-1/2 md:w-3/12 lg:w-1/12 mt-4 md:mt-0 border border-theme-color text-theme-color flex items-center"
+        class="pill w-1/2 md:w-3/12 lg:w-2/12 mt-4 md:mt-0 border border-theme-color text-theme-color flex items-center"
       >
         <span class="pr-2"> Wishlist</span>
-        <PlusMinus :class="[inWishlist ? 'minus ' : '']" />
+        <PlusMinus
+          class="text-theme-color"
+          :class="[inWishlist ? 'minus ' : '']"
+        />
       </div>
     </div>
 
@@ -51,7 +53,6 @@
       </div>
     </div>
 
-    <!-- Image -->
     <div
       class="reveal lg:col-start-7 col-start-1 col-end-13 pb-12 lg:pb-0 flex flex-col justify-end"
     >
@@ -85,7 +86,7 @@ export default {
   computed: {
     ...mapState(["wishlist"]),
     coverImageUrl() {
-      const url = this.$store.state.url;
+      const url = this.$store.state.imageUrl;
       const imagePath =
         this.artPiece.attributes.image.data.attributes.formats.medium.url;
       return url + imagePath;
@@ -127,11 +128,12 @@ export default {
   img {
     max-height: 70vh;
   }
-}
-.sold {
-  position: absolute;
-  left: 50%;
-  top: 40%;
-  transform: translate(-50%);
+
+  .sold {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%);
+  }
 }
 </style>

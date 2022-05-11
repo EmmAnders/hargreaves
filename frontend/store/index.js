@@ -1,6 +1,6 @@
 export const state = () => ({
   apiUrl: process.env.BACKEND_URL,
-  url: process.env.URL,
+  imageUrl: process.env.IMAGE_URL,
   artPieces: [],
   about: [],
   wishlist: [],

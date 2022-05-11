@@ -46,11 +46,13 @@ export default {
   modules: ["@nuxtjs/axios"],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    transpile: ["gsap"],
+  },
 
   publicRuntimeConfig: {
     axios: {
-      baseURL: /* process.env.BACKEND_URL ||  */ "http://localhost:1337/api",
+      baseURL: process.env.BACKEND_URL,
     },
   },
 };

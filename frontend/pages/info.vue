@@ -1,5 +1,5 @@
 <template>
-  <article class="info grid grid-cols-12 w-full">
+  <article class="info grid grid-cols-12">
     <!-- Column left  -->
     <section
       class="col-span-12 lg:col-span-6 flex justify-center items-center h-full border-r border-theme-color"
@@ -28,10 +28,8 @@
           <div class="page-container">
             <h1 class="reveal-info heading-3xl">Info</h1>
           </div>
-          <!-- Bio -->
-          <div class="page-container lg:flex lg:justify-between lg:space-x-32">
-            <p class="reveal-info hidden lg:block">Bio</p>
-            <p class="reveal-info bio">{{ about.bio }}</p>
+          <div class="page-container reveal-info">
+            <p class="whitespace-normal break-words">{{ about.bio }}</p>
           </div>
         </div>
       </div>
@@ -44,12 +42,12 @@
           </div>
 
           <ul v-if="exhibitions" class="group exhibitions reveal-info">
-            <div
+            <li
               class="list grid grid-cols-12 items-center border-t border-theme-color p-1 hover:bg-theme-hover hover:text-white cursor-pointer"
               v-for="(exhibition, index) in exhibitions"
               :key="index"
             >
-              <li
+              <div
                 class="col-span-4 lg:col-span-3 flex items-center page-container"
               >
                 <div
@@ -58,19 +56,19 @@
                 <p class="">
                   {{ exhibition.attributes.name }}
                 </p>
-              </li>
-              <li class="col-span-3 text-center lg:col-span-4 page-container">
+              </div>
+              <div class="col-span-3 text-center lg:col-span-4 page-container">
                 {{ exhibition.attributes.city }}
-              </li>
-              <li class="col-span-3 lg:col-span-4 text-center page-container">
+              </div>
+              <div class="col-span-3 lg:col-span-4 text-center page-container">
                 {{ exhibition.attributes.date }}
-              </li>
-              <li
+              </div>
+              <div
                 class="flex justify-end col-span-2 lg:col-span-1 page-container"
               >
                 <ArrowUpRight class="arrow" />
-              </li>
-            </div>
+              </div>
+            </li>
           </ul>
         </div>
       </div>
@@ -120,7 +118,7 @@ export default {
   },
   computed: {
     images() {
-      const url = this.$store.state.url;
+      const url = this.$store.state.imageUrl;
       return this.about.images.data.map((item) => {
         return url + item.attributes.formats.medium.url;
       });
@@ -150,8 +148,8 @@ export default {
   @screen lg {
     overflow: hidden;
     height: 100vh;
-    width: 100vw;
   }
+
   .exhibitions {
     li {
       padding: 0.5rem 0rem;
@@ -168,10 +166,7 @@ export default {
       }
     }
   }
-  .bio {
-    text-indent: 50px;
-    overflow-x: hidden;
-  }
+
   .list:hover {
     .circle {
       @apply bg-theme-background;
