@@ -99,15 +99,13 @@ import { mapState, mapMutations, mapGetters, mapActions } from "vuex";
 import { gsap } from "gsap";
 
 export default {
-  head() {
-    return {};
-  },
   async asyncData({ $axios }) {
     try {
       const [aboutRes, exhibitionsRes] = await Promise.all([
         $axios.$get(`${this.$store.state.apiUrl}/about?populate=*`),
         $axios.$get(`${this.$store.state.apiUrl}/exhibitions`),
       ]);
+
       return {
         about: aboutRes.data.attributes,
         exhibitions: exhibitionsRes.data,
@@ -129,9 +127,7 @@ export default {
       }
     },
   },
-  methods: {
-    ...mapActions(["getAboutInfo"]),
-  },
+
   async mounted() {
     await this.$nextTick();
     const reveal = document.querySelectorAll(".reveal-info");

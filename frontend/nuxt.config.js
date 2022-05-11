@@ -50,9 +50,7 @@ export default {
     transpile: ["gsap"],
   },
 
-  /*   publicRuntimeConfig: {
-    axios: {
-      baseURL: process.env.BACKEND_URL,
-    },
-  }, */
+  publicRuntimeConfig: {
+    baseURL: process.env.BACKEND_URL,
+  },
 };
