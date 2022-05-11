@@ -105,8 +105,8 @@ export default {
   async asyncData({ $axios }) {
     try {
       const [aboutRes, exhibitionsRes] = await Promise.all([
-        $axios.$get(`/about?populate=*`),
-        $axios.$get(`/exhibitions`),
+        $axios.$get(`${this.$store.state.apiUrl}/about?populate=*`),
+        $axios.$get(`${this.$store.state.apiUrl}/exhibitions`),
       ]);
       return {
         about: aboutRes.data.attributes,

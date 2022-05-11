@@ -79,18 +79,18 @@ export const actions = {
     commit("SET_MOBILE_NAV");
   },
 
-  async getAllPieces({ commit }) {
+  async getAllPieces({ commit, state }) {
     try {
-      const res = await this.$axios.$get("/images?populate=*");
+      const res = await this.$axios.$get(`${state.apiUrl}/images?populate=*`);
       commit("SET_ART_PIECES", res.data);
     } catch (error) {
       console.log("errore", error);
     }
   },
 
-  async getAboutInfo({ commit }) {
+  async getAboutInfo({ commit, state }) {
     try {
-      const res = await this.$axios.$get("/about?populate=*");
+      const res = await this.$axios.$get(`${state.apiUrl}/about?populate=*`);
       commit("SET_ABOUT_PAGE", res.data);
     } catch (error) {
       console.log("error", error);
@@ -123,7 +123,7 @@ export const actions = {
 
     localStorageItems.map((item) => {
       const result = this.$axios.$get(
-        `/images?filters[slug][$eq]=${item.attributes.slug}&populate=*`
+        `${state.apiUrl}/images?filters[slug][$eq]=${item.attributes.slug}&populate=*`
       );
       promises.push(result);
     });
