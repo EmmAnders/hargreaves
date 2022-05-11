@@ -17,10 +17,7 @@
       >
         <nuxt-link class="card-link item" :to="`/${piece.attributes.slug}`">
           <img
-            :src="`${
-              coverImageUrl +
-              piece.attributes.image.data.attributes.formats.medium.url
-            }`"
+            :src="`${piece.attributes.image.data.attributes.formats.medium.url}`"
           />
         </nuxt-link>
       </div>

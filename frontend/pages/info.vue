@@ -116,11 +116,9 @@ export default {
   },
   computed: {
     images() {
-      const url = this.$store.state.imageUrl;
-
       if (this.about.images.length) {
         return this.about.images.data.map((item) => {
-          return url + item.attributes.formats.medium.url;
+          return item.attributes.formats.medium.url;
         });
       } else {
         return [];

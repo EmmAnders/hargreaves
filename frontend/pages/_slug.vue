@@ -86,10 +86,7 @@ export default {
   computed: {
     ...mapState(["wishlist"]),
     coverImageUrl() {
-      const url = this.$store.state.imageUrl;
-      const imagePath =
-        this.artPiece.attributes.image.data.attributes.formats.medium.url;
-      return url + imagePath;
+      return this.artPiece.attributes.image.data.attributes.formats.medium.url;
     },
     inWishlist() {
       return this.wishlist.some(

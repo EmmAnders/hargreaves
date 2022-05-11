@@ -1,5 +1,4 @@
 export const state = () => ({
-  imageUrl: "https://artbyhargreaves.herokuapp.com",
   apiUrl: process.env.BASE_URL,
   artPieces: [],
   about: [],
