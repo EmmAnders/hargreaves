@@ -62,7 +62,7 @@
           v-if="!artPiece.attributes.inStock"
           class="absolute top-0 right-0 w-16 h-16 lg:w-24 lg:h-24 bg-theme-color rounded-full mt-4 mr-2 lg:mt-8 lg:mr-6"
         >
-          <div class="text-theme-background sold">Sold</div>
+          <div class="text-theme-background sold text">Sold</div>
         </div>
       </div>
     </div>
