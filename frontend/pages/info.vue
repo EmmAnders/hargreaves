@@ -10,7 +10,7 @@
         <div>
           <!-- images -->
           <img
-            v-if="images[0]"
+            v-if="images"
             class="reveal-info w-full h-auto object-cover aspect-auto"
             :src="images[0]"
           />
@@ -119,9 +119,14 @@ export default {
   computed: {
     images() {
       const url = this.$store.state.imageUrl;
-      return this.about.images.data.map((item) => {
-        return url + item.attributes.formats.medium.url;
-      });
+
+      if (this.about.images.length) {
+        return this.about.images.data.map((item) => {
+          return url + item.attributes.formats.medium.url;
+        });
+      } else {
+        return [];
+      }
     },
   },
   methods: {
