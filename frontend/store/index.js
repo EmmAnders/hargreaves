@@ -84,7 +84,7 @@ export const actions = {
       const res = await this.$axios.$get("/images?populate=*");
       commit("SET_ART_PIECES", res.data);
     } catch (error) {
-      console.log("error", error);
+      console.log("errore", error);
     }
   },
 
