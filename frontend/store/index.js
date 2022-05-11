@@ -93,7 +93,7 @@ export const actions = {
       const res = await this.$axios.$get(`/about?populate=*`);
       commit("SET_ABOUT_PAGE", res.data);
     } catch (error) {
-      console.log("error", error);
+      console.log("errorr", error);
     }
   },
 
