@@ -25,7 +25,7 @@
       <!-- Section 1  -->
       <div class="section">
         <div class="about flex flex-col justify-between pb-6">
-          <div class="page-container">
+          <div class="py-3 lg:py-6 page-container">
             <h1 class="reveal-info heading-3xl">Info</h1>
           </div>
           <div class="page-container reveal-info">
@@ -37,11 +37,14 @@
       <!-- Section 2 -->
       <div class="section">
         <div class="flex flex-col justify-between">
-          <div class="py-6 page-container">
+          <div class="py-3 lg:py-6 page-container">
             <h2 class="reveal-info heading-xxl">Exhibitions</h2>
           </div>
 
-          <ul v-if="exhibitions" class="group exhibitions reveal-info">
+          <ul
+            v-if="exhibitions"
+            class="page-container group exhibitions reveal-info"
+          >
             <li
               class="list grid grid-cols-12 items-center border-t border-theme-color p-1 hover:bg-theme-hover hover:text-white cursor-pointer"
               v-for="(exhibition, index) in exhibitions"
@@ -76,7 +79,7 @@
       <!-- Section 3 -->
       <div class="section reveal-info page-container pb-8">
         <div class="flex flex-col justify-between pb-6">
-          <div class="py-6">
+          <div class="py-3 lg:py-6">
             <h2 class="heading-xxl">Contact</h2>
           </div>
 

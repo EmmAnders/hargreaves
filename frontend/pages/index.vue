@@ -1,6 +1,6 @@
 <template>
-  <div class="gallery-page h-full w-full page-container">
-    <div class="pt-32 pb-16">
+  <div class="gallery-page h-full w-full page-container pb-48 pt-16 lg:py-32">
+    <div class="pb-16">
       <h1 class="reveal heading-3xl">
         Gallery
         <span class="text-theme-grey">({{ filteredPieces.length }})</span>
@@ -136,6 +136,7 @@ export default {
   .gallery {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
+
     &-item {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
